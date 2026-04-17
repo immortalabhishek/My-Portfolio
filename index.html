@@ -1798,31 +1798,33 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 
 let dark = true;
 
-document.getElementById('theme-toggle').addEventListener('click', () => {
+const toggle = document.getElementById('theme-toggle');
 
-  dark = !dark;
+if (toggle) {
+  toggle.addEventListener('click', () => {
 
-  document.documentElement.style.setProperty('--bg',          dark ? '#06060f'                : '#f4f1eb');
+    dark = !dark;
 
-  document.documentElement.style.setProperty('--bg2',         dark ? '#0c0c1a'                : '#ece8df');
+    document.documentElement.style.setProperty('--bg', dark ? '#06060f' : '#f4f1eb');
+    document.documentElement.style.setProperty('--bg2', dark ? '#0c0c1a' : '#ece8df');
+    document.documentElement.style.setProperty('--text', dark ? '#f0f0ff' : '#0a0a14');
+    document.documentElement.style.setProperty('--text2', dark ? 'rgba(240,240,255,0.55)' : 'rgba(10,10,20,0.6)');
+    document.documentElement.style.setProperty('--muted', dark ? 'rgba(240,240,255,0.35)' : 'rgba(10,10,20,0.35)');
+    document.documentElement.style.setProperty('--card', dark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.03)');
+    document.documentElement.style.setProperty('--card-border', dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)');
 
-  document.documentElement.style.setProperty('--text',        dark ? '#f0f0ff'                : '#0a0a14');
+    const icon = document.querySelector('#theme-toggle svg');
 
-  document.documentElement.style.setProperty('--text2',       dark ? 'rgba(240,240,255,0.55)' : 'rgba(10,10,20,0.6)');
+    if (icon) {
+      if (dark) {
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+      } else {
+        icon.innerHTML = '<circle cx="12" cy="12" r="5"/>';
+      }
+    }
 
-  document.documentElement.style.setProperty('--muted',       dark ? 'rgba(240,240,255,0.35)' : 'rgba(10,10,20,0.35)');
-
-  document.documentElement.style.setProperty('--card',        dark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.03)');
-
-  document.documentElement.style.setProperty('--card-border', dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)');
-
-  const icon = document.querySelector('#theme-toggle svg');
-
-  if (dark) icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
-
-  else      icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
-
-});
+  });
+}
 
 
 
@@ -1910,7 +1912,7 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 
       const entering = r.top < wh * 0.87 && r.bottom > wh * 0.07;
 
-      const leaving  = mid   <script wh * 0.11;
+      const leaving = mid < wh * 0.11;
 
       const waiting  = r.top > wh * 0.94;
 
@@ -2159,13 +2161,15 @@ function openVideo(videoSrc) {
 
 // Close modal functionality
 const closeModal = document.querySelector('.video-modal .close');
-closeModal.addEventListener('click', () => {
-  const modal = document.querySelector('.video-modal');
-  const videoElement = modal.querySelector('video');
-  videoElement.pause();
-  videoElement.src = '';
-  modal.style.display = 'none';
-});
+if (closeModal) {
+  closeModal.addEventListener('click', () => {
+    const modal = document.querySelector('.video-modal');
+    const videoElement = modal.querySelector('video');
+    videoElement.pause();
+    videoElement.src = '';
+    modal.style.display = 'none';
+  });
+}
 
 </script>
 
