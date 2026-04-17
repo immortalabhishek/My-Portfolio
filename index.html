@@ -1540,8 +1540,10 @@ who’s serious about their work, we’ll get along well.
 
     <!-- 🎥 VIDEO CARD for CoachHub Pro -->
     <div class="media-card video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/q9qSkIAPziY?rel=0&modestbranding=1" 
-          title="CoachHub Pro Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      <iframe 
+          src="https://www.youtube.com/embed/NcOiEfgY1rY"
+          style="width:100%; height:100%; border:none;"
+          allowfullscreen>
       </iframe>
     </div>
 
@@ -1609,8 +1611,10 @@ who’s serious about their work, we’ll get along well.
 
     <!-- 🎥 VIDEO CARD for NexSpace -->
     <div class="media-card video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/jUcLUfqD0JA?rel=0&modestbranding=1" 
-          title="NexSpace Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+       <iframe 
+          src="https://www.youtube.com/embed/QrGzvuS7FMk"
+          style="width:100%; height:100%; border:none;"
+          allowfullscreen>
       </iframe>
     </div>
 
@@ -2241,6 +2245,21 @@ document.getElementById("imageModal").addEventListener("click", function(e) {
   }
   window.addEventListener('mousemove', onMove, { passive: true });
 })();
+
+.video-card {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
 </script>
 </body>
 
