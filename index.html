@@ -1177,8 +1177,15 @@ footer p{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;
 .video-card iframe {
   width: 100%;
   height: 100%;
-  position: relative;
-  z-index: 10;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .video-card {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
 }
 
   </style>
@@ -1552,11 +1559,11 @@ who’s serious about their work, we’ll get along well.
 
     <!-- 🎥 VIDEO CARD for CoachHub Pro -->
     <div class="media-card video-card">
-      <iframe 
-          src="https://www.youtube.com/embed/NcOiEfgY1rY"
-          style="width:100%; height:100%; border:none;"
-          allowfullscreen>
-      </iframe>
+     <iframe 
+  src="https://www.youtube.com/embed/NcOiEfgY1rY"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+  </iframe>
     </div>
 
 
@@ -1624,10 +1631,10 @@ who’s serious about their work, we’ll get along well.
     <!-- 🎥 VIDEO CARD for NexSpace -->
     <div class="media-card video-card">
        <iframe 
-          src="https://www.youtube.com/embed/QrGzvuS7FMk"
-          style="width:100%; height:100%; border:none;"
-          allowfullscreen>
-      </iframe>
+  src="https://www.youtube.com/embed/QrGzvuS7FMk"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+  </iframe>
     </div>
 
 
